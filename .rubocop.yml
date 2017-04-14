@@ -1,0 +1,106 @@
+# This is the configuration used to check the rubocop source code.
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'db/**/*.rb'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'config.ru'
+    - 'bin/**/*'
+    - 'spec/spec_helper.rb'
+    - 'Gemfile'
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+##################### Style ##################################
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/EmptyElse:
+  EnforcedStyle: empty
+
+Style/GuardClause:
+  MinBodyLength: 5
+
+Style/Documentation:
+  Enabled: false
+
+Style/IndentationConsistency:
+  EnforcedStyle: rails
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/NumericLiterals:
+  MinDigits: 7
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/SpaceBeforeFirstArg:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/SpaceInsideParens:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+##################### Lint ##################################
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+##################### Metrics ##################################
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/LineLength:
+  Max: 160
+  Exclude:
+    - "db/migrate/*.rb"
+
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - "db/migrate/*.rb"
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Style/SymbolProc:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Max: 200
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/LineLength:
+  Max: 200
+
+Lint/UnusedBlockArgument:
+  Enabled: false
